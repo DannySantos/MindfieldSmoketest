@@ -1,4 +1,8 @@
 <div class="col-sm-6 col-sm-offset-3">
-  <h1>Register</h1>
-  <p>Find me in app/views/expert/new.html.erb</p>
+  <h1 class="text-center">Register</h1>
+  <%= form_for(@expert) do |f| %>
+    <%= f.text_field :name, class: "form-control", placeholder: "Name" %>
+    <%= f.text_field :email, class: "form-control", placeholder: "Email" %>
+    <%= f.submit "Join the Community", class: "form-control btn btn-wide" %>
+  <% end %>
 </div>
