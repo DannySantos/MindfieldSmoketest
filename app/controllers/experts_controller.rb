@@ -1,6 +1,7 @@
 class ExpertsController < ApplicationController
   def new
     @expert = Expert.new
+    @questions = Question.where(receiver: 0)
   end
 
   def create

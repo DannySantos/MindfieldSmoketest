@@ -1,6 +1,7 @@
 class ConsumersController < ApplicationController
   def new
     @consumer = Consumer.new
+    @questions = Question.where(receiver: 1)
   end
 
   def create
