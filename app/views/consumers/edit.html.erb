@@ -1,0 +1,14 @@
+<div class="consumer container-fluid">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <h1>Enter your name and email address to finish</h1>
+      
+      <%= form_for(@consumer) do |f| %>
+        <%= f.text_field :name, class: "form-control", placeholder: "Name" %>
+        <%= f.text_field :email, class: "form-control", placeholder: "Email" %>
+        
+        <%= f.submit "Finish", class: "form-control btn btn-wide" %>
+      <% end %>
+    </div>
+  </div>
+</div>

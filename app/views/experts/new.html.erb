@@ -1,11 +1,19 @@
-<div class="col-sm-6 col-sm-offset-3">
-  <h1 class="text-center">Register</h1>
-  <%= form_for(@expert) do |f| %>
-    <%= f.text_field :name, class: "form-control", placeholder: "Name" %>
-    <%= f.text_field :email, class: "form-control", placeholder: "Email" %>
+<div class="expert container-fluid">
+  <div class="row">
+    <div class="banner col-sm-12">
+      <h2 class="text-center">Banner</h2>
+    </div>
     
-    <%= render @questions %>
-    
-    <%= f.submit "Join the Community", class: "form-control btn btn-wide" %>
-  <% end %>
+    <div class="col-sm-6 col-sm-offset-3">
+      <h1 class="text-center">Register</h1>
+      <%= form_for(@expert) do |f| %>
+        <%= f.text_field :name, class: "form-control", placeholder: "Name" %>
+        <%= f.text_field :email, class: "form-control", placeholder: "Email" %>
+
+        <%= render @questions %>
+
+        <%= f.submit "Join the Community", class: "form-control btn btn-wide" %>
+      <% end %>
+    </div>
+  </div>
 </div>

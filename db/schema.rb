@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161122114005) do
+ActiveRecord::Schema.define(version: 20161123112503) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,15 @@ ActiveRecord::Schema.define(version: 20161122114005) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.index ["question_id"], name: "index_answers_on_question_id", using: :btree
+  end
+
+  create_table "consumer_answers", force: :cascade do |t|
+    t.integer  "consumer_id"
+    t.integer  "answer_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["answer_id"], name: "index_consumer_answers_on_answer_id", using: :btree
+    t.index ["consumer_id"], name: "index_consumer_answers_on_consumer_id", using: :btree
   end
 
   create_table "consumers", force: :cascade do |t|
@@ -45,4 +54,6 @@ ActiveRecord::Schema.define(version: 20161122114005) do
   end
 
   add_foreign_key "answers", "questions"
+  add_foreign_key "consumer_answers", "answers"
+  add_foreign_key "consumer_answers", "consumers"
 end
